@@ -1,5 +1,6 @@
 package com.stateauto.coveragecalc;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -51,8 +52,8 @@ public class CalcSteps {
 
     @And("^the user asks for the coverage amount to be calculated$")
     public void theUserAsksForTheCoverageAmountToBeCalculated() throws Throwable {
-        driver.get("http://localhost:8614/helloWorld");
-        assertTrue(driver.getPageSource().contains("Hello World"));
+       // driver.get("http://localhost:8614/helloWorld");
+       // assertTrue(driver.getPageSource().contains("Hello World"));
 
         assertTrue(true);
     }
@@ -61,5 +62,30 @@ public class CalcSteps {
     public void the_coverage_amount_is(int arg0) throws Throwable {
         System.out.println(arg0);
         assertTrue(true);
+    }
+
+    @And("^the user hasn't selected a coverage name of <coverageName>$")
+    public void theUserHasnTSelectedACoverageNameOfCoverageName() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the user is told that a coverage name hasn't been selected$")
+    public void theUserIsToldThatACoverageNameHasnTBeenSelected() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the user hasn't selected a coverage limit of <coverageLimit>$")
+    public void theUserHasnTSelectedACoverageLimitOfCoverageLimit() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the user is told that a coverage limit hasn't been selected$")
+    public void theUserIsToldThatACoverageLimitHasnTBeenSelected() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        assertTrue(1==2);
+        throw new PendingException();
     }
 }
