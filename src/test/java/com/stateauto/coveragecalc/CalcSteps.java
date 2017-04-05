@@ -6,12 +6,16 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
 
 import javax.swing.*;
+
+import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -24,6 +28,13 @@ public class CalcSteps {
     }
 
     protected WebDriver driver;
+
+    // http://www.testingexcellence.com/open-new-tab-browser-using-selenium-webdriver-java/
+    private void openNewTab() {
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+    }
 
     @Before
     public void beforeScenario() {
@@ -52,9 +63,8 @@ public class CalcSteps {
 
     @And("^the user asks for the coverage amount to be calculated$")
     public void theUserAsksForTheCoverageAmountToBeCalculated() throws Throwable {
-       // driver.get("http://localhost:8614/helloWorld");
-       // assertTrue(driver.getPageSource().contains("Hello World"));
-
+        driver.get("http://localhost:8614/helloWorld");
+        assertTrue(driver.getPageSource().contains("Hello World"));
         assertTrue(true);
     }
 
