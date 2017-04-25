@@ -1,5 +1,5 @@
 Feature: Coverage Calculator
-  This is needed to determine the coverage amount based on the coverage and limit selected.
+  This is needed to determine the coverage amount based on the coverage and limit selected. something 2
 
   Scenario Outline: User selects a coverage and limit to get a coverage cost amount
     Given the user selects a coverage of <coverageName>
