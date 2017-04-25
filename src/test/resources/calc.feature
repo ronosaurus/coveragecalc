@@ -17,7 +17,9 @@ Feature: Coverage Calculator
   Scenario: User asks for the coverage amount to be calculated but hasn't selected a coverage name
 
     Given the user asks for the coverage amount to be calculated
-    And the user hasn't selected a coverage name of <coverageName>
+    And the user hasn't selected a coverage name of:
+      | Bodily Injury       |
+      | Uninsured Motorists |
     Then the user is told that a coverage name hasn't been selected
 
 
